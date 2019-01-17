@@ -1,3 +1,8 @@
+"""
+    Algoritmo responsavel por criar realizar busca em profundidade
+
+"""
+
 from Pilha import Pilha
 
 class Busca_Em_Profundidade:
@@ -6,24 +11,25 @@ class Busca_Em_Profundidade:
         self.inicio.visitado = True
         self.objetivo = objetivo
         #fronteira armazena pilha de cidades que serão visitadas
-        self.fronteira = Pilha(100)
+        self.fronteira = Pilha(10000)
         self.fronteira.empilhar(inicio)
-        
+        self.achou = False
         
     def buscar(self):
         topo = self.fronteira.getTopo()
-        print("Topo: {}".format(topo.nome))
-
-        for adjacente in topo.adjacentes:
-            print("Verificando se ja visitado: {}".format(adjacente.cidade.nome))
-            if adjacente.cidade.visitado == False:
-                adjacente.cidade.visitado = True
-                self.fronteira.empilhar(adjacente.cidade)
-                Busca_Em_Profundidade.buscar(self)
-        print("Desempilhou: {}" .format(self.fronteira.desempilhar().nome))
-       
+        
+        if topo == self.objetivo :
+            self.achou = True
+        else:
+            print("Topo: {}".format(topo.nome))
+            for adjacente in topo.adjacentes:
+                if self.achou == False:
+                    self.fronteira.empilhar(adjacente.cidade)
+                    Busca_Em_Profundidade.buscar(self)
+            print("Desempilhou: {}" .format(self.fronteira.desempilhar().nome))
+           
         
 from Mapa import Mapa
 mapa = Mapa()
-profundidade = Busca_Em_Profundidade(mapa.portoUniao, mapa.curitiba)
+profundidade = Busca_Em_Profundidade(mapa.portoUniao, mapa.canoinhas)
 profundidade.buscar()
