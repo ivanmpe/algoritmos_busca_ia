@@ -37,5 +37,5 @@ class Busca_largura :
 
 from Mapa import Mapa
 mapa = Mapa()
-largura = Busca_largura(mapa.portoUniao, mapa.pauloFrontin)
+largura = Busca_largura(mapa.portoUniao, mapa.curitiba)
 largura.buscar()
