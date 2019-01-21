@@ -2,7 +2,7 @@ from Cidade import Cidade
 from Adjacente import Adjacente
 
 class Mapa:
-    portoUniao = Cidade("porto uniao")
+    portoUniao = Cidade("Porto Uniao")
     pauloFrontin = Cidade("Paulo Frontin")
     canoinhas = Cidade("Canoinhas")
     irati = Cidade("Irati")
@@ -14,7 +14,7 @@ class Mapa:
     saoJose = Cidade("São josé dos pinhais")
     contenda = Cidade("Contenda")
     mafra = Cidade("Mafra")
-    tijucas = Cidade("tijucas do sul")
+    tijucas = Cidade("Tijucas do sul")
     lapa = Cidade("Lapa")
     saoMateus = Cidade("Sao Mateus do Sul")
     tresBarras = Cidade("Tres barras")
